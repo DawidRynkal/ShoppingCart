@@ -1,26 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import { Container } from 'react-bootstrap';
+import Subtotal from './components/Subtotal/Subtotal'
+import PickupSaving from './components/PickupSaving/PickupSaving'
+import TaxesFees from './components/TaxesFees/TaxesFees'
+import EstimatedTotal from './components/EstimatedTotal/EstimatedTotal'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      total: 100,
+      PickupSaving: -4.56,
+      taxes: 0,
+      estimatedTotal: 0,
+    }
+  }
+  render() {
+    return (
+      <div className='container' >
+        <Container className='purchase-card'>
+          <Subtotal price={this.state.total.toFixed(2)} />
+          <PickupSaving price={this.state.PickupSaving} />
+          <TaxesFees taxes={this.state.taxes.toFixed(2)} />
+          <hr />
+          <EstimatedTotal price={this.state.estimatedTotal.toFixed(2)} />
+        </Container>
+
+      </div>
+    );
+  }
+
 }
 
 export default App;
