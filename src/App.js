@@ -5,6 +5,8 @@ import Subtotal from './components/Subtotal/Subtotal'
 import PickupSaving from './components/PickupSaving/PickupSaving'
 import TaxesFees from './components/TaxesFees/TaxesFees'
 import EstimatedTotal from './components/EstimatedTotal/EstimatedTotal'
+import ItemDetails from './components/ItemDetails/ItemDetails'
+import PromoCodeDiscount from './components/PromoCode/PromoCode'
 
 class App extends Component {
   constructor(props) {
@@ -12,11 +14,25 @@ class App extends Component {
 
     this.state = {
       total: 100,
-      PickupSaving: -4.56,
+      PickupSaving: -3.85,
       taxes: 0,
       estimatedTotal: 0,
+      disabledPromoButton: false,
     }
   }
+
+  componentDidMount() {
+    this.setState({
+      taxes: (this.state.total + this.state.PickupSaving) * 0.0875
+    },
+
+      function () {
+        this.setState({
+          estimatedTotal: (this.state.total + this.state.PickupSaving + this.state.taxes)
+        })
+      })
+  }
+
   render() {
     return (
       <div className='container' >
@@ -26,6 +42,12 @@ class App extends Component {
           <TaxesFees taxes={this.state.taxes.toFixed(2)} />
           <hr />
           <EstimatedTotal price={this.state.estimatedTotal.toFixed(2)} />
+          <ItemDetails price={this.state.estimatedTotal.toFixed(2)} />
+          <hr />
+          <PromoCodeDiscount
+            giveDiscount={() => this.giveDiscountHandler()}
+            isDisabled={this.state.disabledPromoButton}
+          />
         </Container>
 
       </div>

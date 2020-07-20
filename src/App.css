@@ -13,3 +13,22 @@
  
 }
 
+.item-details-button:focus{
+  outline:none;
+}
+
+.product-image{
+  margin-top: 10px
+}
+
+.price-strike {
+  text-decoration-line:line-through;
+  color:darkgoldenrod;
+}
+
+.promo-code-button{
+  outline: none;
+}
+.btn-round{
+  max-width: 100px;
+}
