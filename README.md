@@ -1,3 +1,11 @@
+# ShoppingCart
+Shopping cart created with Redux concept.The aplication also uses react-bootsrap. 
+
+ ![Screenshot_1](https://user-images.githubusercontent.com/50556211/88314380-22330e00-cd15-11ea-8a09-3c132bbe6bd7.png)
+ ![Screenshot_2](https://user-images.githubusercontent.com/50556211/88314387-252dfe80-cd15-11ea-8f4c-b22776660f02.png)![Screenshot_3](https://user-images.githubusercontent.com/50556211/88314390-27905880-cd15-11ea-931a-186c95e7ea00.png)
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
