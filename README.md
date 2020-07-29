@@ -1,4 +1,6 @@
 # ShoppingCart
+Demo link: https://dawidrynkal.github.io/ShoppingCart/
+
 Shopping cart created with Redux concept.The aplication also uses react-bootsrap. 
 
  ![Screenshot_1](https://user-images.githubusercontent.com/50556211/88314380-22330e00-cd15-11ea-8a09-3c132bbe6bd7.png)
